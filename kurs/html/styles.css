@@ -6,7 +6,42 @@ body {
     background-color: #2B474B;
     color: #fff;
 }
+:root {
+	--grid-width: 11400px;
+	--grid-gutter: .5em;
+}
 
+.container {
+	max-width: calc(var(--grid-width) + var(--grid-gutter) * 2);
+	min-width: calc(320px + var(--grid-gutter) * 2);
+	padding: 0 var(--grid-gutter);
+	margin: auto;
+}
+
+.row {
+	display: flex;
+	margin: 0 calc(var(--grid-gutter) * -1);
+}
+
+.col {
+	width: fit-content;
+	padding: 0 var(--grid-gutter);
+}
+
+.col--lead {
+	flex: 1;
+}
+
+.col--center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.col--right {
+	display: flex;
+	justify-content: right;
+}
 header {
     background-color: #1A2E33;
     padding: 1rem 2rem;
