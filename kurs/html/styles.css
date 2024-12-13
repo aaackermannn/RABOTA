@@ -1,0 +1,136 @@
+/* Общие стили */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2B474B;
+    color: #fff;
+}
+
+header {
+    background-color: #1A2E33;
+    padding: 1rem 2rem;
+}
+
+.top-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.main-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+.main-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.assortment-main {
+    padding: 2rem;
+    background-color: #1B2F33;
+}
+
+.product-container {
+    display: flex;
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #243D40;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 1rem;
+    position: relative;
+    flex: 1;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #346B68;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: #A8FFEA;
+}
+
+.product-card .price {
+    font-size: 1rem;
+    color: #94D7C6;
+    margin-bottom: 1rem;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.add-to-cart {
+    background-color: #47C6A5;
+    color: #FFFFFF;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 80%;
+}
+
+.add-to-cart:hover {
+    background-color: #3AB38C;
+    transform: scale(1.05);
+}
+
+/* Иконка избранного */
+.heart-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: url('heart-outline.png') no-repeat center center / contain;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.heart-icon.active {
+    background: url('heart-filled.png') no-repeat center center / contain;
+}
+
+/* Подвал */
+footer {
+    background-color: #1A2E33;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer address a {
+    color: #A8FFEA;
+    text-decoration: none;
+}
+
+
+
+
+

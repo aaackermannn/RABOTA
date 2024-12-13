@@ -23,20 +23,6 @@ swiper.on('slideChange', function() {
 const menuButton = document.querySelector('.submenu');
 const mainMenu = document.querySelector('.main-menu');
 
-// Обработчик клика на кнопку меню
-menuButton.addEventListener('click', () => {
-    // Переключаем класс active
-    mainMenu.classList.toggle('active');
-	
-});
-
-// Дополнительно: закрытие меню при клике вне его (опционально)
-document.addEventListener('click', (event) => {
-    if (!mainMenu.contains(event.target) && !menuButton.contains(event.target)) {
-        mainMenu.classList.remove('active');
-    }
-});
-const menuItems = document.querySelectorAll('.main-menu li');
 
 menuItems.forEach((item) => {
     item.addEventListener('click', () => {
@@ -66,17 +52,5 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener("DOMContentLoaded", () => {
 	const icon = document.querySelector(".icon");
 	const menu = document.querySelector(".notification-menu");
-  
-	// Открытие/закрытие меню при клике
-	icon.addEventListener("click", () => {
-	  menu.style.display = menu.style.display === "block" ? "none" : "block";
-	});
-  
-	// Закрытие меню при клике вне области
-	document.addEventListener("click", (event) => {
-	  if (!icon.contains(event.target) && !menu.contains(event.target)) {
-		menu.style.display = "none";
-	  }
-	});
   });
   

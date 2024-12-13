@@ -133,14 +133,13 @@ html, body {
 }
 .main-menu {
     display: flex;
-    justify-content: flex-end; /* Выравнивание меню вправо */
+    justify-content: flex-end;
     align-items: center;
-    gap: 20px; /* Интервал между элементами меню */
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-    position: relative; /* Оставляем для правильного позиционирования */
+    gap: 20px;
+    opacity: 1; /* Устанавливаем 1, чтобы меню было видно */
+    transform: translateY(0); /* Убираем смещение вверх */
+    pointer-events: auto; /* Включаем возможность кликов */
+    position: relative;
 }
 
 .main-menu.active {
