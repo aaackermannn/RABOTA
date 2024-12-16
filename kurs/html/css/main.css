@@ -1,4 +1,4 @@
-@import '../libs/btn/anim-menu-btn.css';
+
 
 @import '../css/vars.css';
 @import '../css/grid.css';
@@ -34,15 +34,9 @@
     padding: 1rem 2rem;
 }
 
-.logo {
-    margin-top: 0;
-}
 
-.submenu {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-}
+
+
 h1, p, .button {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75); /* Черная окантовка */
 }
@@ -194,7 +188,7 @@ body {
 }
 
 .top-line {
-	padding: 3.2em 0;
+	padding: 1.0em 0;
 }
 
 .logo {
@@ -439,98 +433,6 @@ body {
 	pointer-events: auto;
 }
 
-
-
-
-
-
-.notification-icon {
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	z-index: 1000;
-	user-select: none; /* Запрещает выделение значка */
-  }
-  
-  .notification-icon .icon {
-	position: relative;
-	width: 50px;
-	height: 50px;
-	background-color: #ffffff00;
-	border-radius: 50%;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: transform 0.3s ease; /* Плавная анимация при наведении */
-  }
-  
-  .notification-icon .icon:hover {
-	transform: scale(1.1); /* Увеличение значка при наведении */
-  }
-  
-  .notification-icon .notification-count {
-	position: absolute;
-	top: -5px;
-	right: -5px;
-	background-color: #ed0606;
-	color: #ffffff;
-	font-size: 14px;
-	font-weight: bold;
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-  }
-  
-  .notification-icon .notification-menu {
-	position: absolute;
-	bottom: 70px;
-	right: 0;
-	background-color: #6200ea;
-	color: #000000;
-	border-radius: 8px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	overflow: hidden;
-	opacity: 0;
-	transform: scale(0.8) translateY(20px); /* Исходное состояние (уменьшенное и скрытое) */
-	transition: opacity 0.4s ease, transform 0.4s ease; /* Плавная анимация появления */
-	pointer-events: none; /* Скрывает взаимодействие, если меню закрыто */
-  }
-  
-  .notification-icon .notification-menu ul {
-	list-style: none;
-	margin: 0;
-	padding: 10px 0;
-  }
-  
-  .notification-icon .notification-menu li {
-	padding: 10px 20px;
-	display: flex;
-	align-items: center;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .notification-icon .notification-menu li:last-child {
-	border-bottom: none;
-  }
-  
-  .notification-icon .notification-menu .list-number {
-	background-color: #ffffff;
-	color: #6200ea;
-	font-size: 12px;
-	font-weight: bold;
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-right: 10px;
-  }
   
   /* Показываем меню при наведении */
   .notification-icon:hover .notification-menu {
@@ -540,35 +442,5 @@ body {
   }
   
   
-/* Основной контейнер для социальных ссылок */
-.social-links {
-	position: fixed;
-	bottom: 20px;
-	left: 20px;
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	z-index: 1000;
-  }
-  
-  /* Стили для иконок */
-  .social-links .social-icon {
-	display: block;
-	width: 40px;
-	height: 40px;
-	opacity: 0.5; /* Полупрозрачность по умолчанию */
-	transition: transform 0.3s ease, opacity 0.3s ease; /* Плавные переходы */
-  }
-  
-  .social-links .social-icon img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-  }
-  
-  /* Эффекты при наведении */
-  .social-links .social-icon:hover {
-	transform: scale(1.2); /* Увеличение размеров */
-	opacity: 1; /* Полная прозрачность */
-  }
+
   

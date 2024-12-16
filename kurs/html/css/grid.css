@@ -1,6 +1,6 @@
 :root {
-	--grid-width: 11400px;
-	--grid-gutter: .5em;
+	--grid-width: 11000px;
+	--grid-gutter: 0.5em;
 }
 
 .container {
