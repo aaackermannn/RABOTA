@@ -123,13 +123,6 @@ html, body {
     .main-menu li {
         margin: 1rem 0;
     }
-
-    /* Отображение меню, если оно активно */
-    .main-menu.active {
-		opacity: 1;
-		transform: translateY(0);
-		pointer-events: auto;
-	}
 }
 .main-menu {
     display: flex;
@@ -142,11 +135,7 @@ html, body {
     position: relative;
 }
 
-.main-menu.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-}
+
 
 @font-face {
 	font-family: montserrat-g;

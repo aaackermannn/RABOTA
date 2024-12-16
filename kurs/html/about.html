@@ -1,47 +1,113 @@
-
-<!-- Страница "О нас" -->
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>О нас</title>
-	<link rel="stylesheet" href="styles.css">
-	<script src="script.js" defer></script>
+	<title>Document</title>
+
+	<script src="libs/btn/anim-menu-btn.min.js" defer></script>
+	<link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
+	<script src="libs/swiper/swiper-bundle.min.js" defer></script>
+
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/app.js" defer></script>
 </head>
 <body>
-	<header>
-		<div class="top-line">
-			<a href="index.html" class="logo">
-				<img src="logo.png" alt="Raven">
-			</a>
-			<button class="menu-toggle">
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
-			<nav class="main-menu">
-				<ul>
-					<li><a href="index.html">Главная</a></li>
-					<li><a href="assortment.html">Ассортимент</a></li>
-					<li><a href="about.html">О нас</a></li>
-					<li><a href="contacts.html">Контакты</a></li>
-					<li><a href="cart.html">Корзина</a></li>
-				</ul>
-			</nav>
+	<div class="swiper slider">
+		<div class="slider-ui">
+			<div class="container header-wrapper">
+				<div class="top-line">
+					<div class="row">
+						<div class="col col--left">
+							<a href="#" class="logo">
+								
+							</a>
+						</div>
+						<div class="col col--center col--right col--lead">
+							<nav class="main-menu">
+								<ul>
+									<li><a href="index.html">Главная</a></li>
+									<li><a href="assortment.html">Ассортимент</a></li>
+									<li><a href="about.html">О нас</a></li>
+									<li><a href="contacts.html">Контакты</a></li>
+									<li><a href="cart.html">Корзина</a></li>
+								</ul>
+							</nav>
+						</div>
+						
+					</div>
+				</div>
+				<div class="header-content">
+					<div class="header-content__slide active">
+						<h1 class="letters">Природа</h1>
+						<div class="header-content__info">
+							<p>Каждая капля нашего парфюма — это история, рожденная в природе. Мы выращиваем деревья специально для создания ароматов, чтобы подарить вам чистоту, экологичность и уникальность. Наши духи — это не просто продукт, это символ вашей связи с природой.</p><br>
+							<button class="button button--main">Приобрети парфюм сейчас</button>
+						</div>
+					</div>
+					<div class="header-content__slide">
+						<h1 class="letters">Жизнь</h1>
+						<div class="header-content__info">
+							<p>Выбирая нас, вы выбираете не только аромат, но и будущее. С каждым приобретением вы поддерживаете высадку новых деревьев, которые становятся источником вдохновения и ингредиентов для наших духов.</p><br>
+							<button class="button button--main">Приобрети парфюм сейчас</button>
+						</div>
+					</div>
+					<div class="header-content__slide">
+						<h1 class="letters">Гармония</h1>
+						<div class="header-content__info">
+							<p>Выберите свой индивидуальный аромат, рожденный в гармонии с природой. Пусть каждый день наполняется нотами свежести, древесной теплотой и цветочной нежностью, которые будут сопровождать вас, куда бы вы ни отправились.</p><br>
+							<button class="button button--main">Приобрети парфюм сейчас</button>
+						</div>
+					</div>
+				</div>
+				<div class="header-bottom"></div>
+			</div>
 		</div>
-	</header>
-	<main>
-		<section class="about-main">
-			<h1>О нас</h1>
-			<p>Добро пожаловать в нашу компанию! Мы занимаемся продажей уникальных товаров для вашего дома и офиса.</p>
-		</section>
-	</main>
-	<footer>
-		<p>&copy; 2024. Все права защищены.</p>
-		<address>
-			Разработано: <a href="mailto:developer@example.com">developer@example.com</a>
-		</address>
-	</footer>
+		<div class="swiper-wrapper">
+			<div class="swiper-slide slider__item">
+				<div class="slider__layer" data-swiper-parallax="35%" style="background-image: url(img/slides/slide-1-layer-back.jpg);"></div>
+				<div class="slider__layer" data-swiper-parallax="25%" style="background-image: url(img/slides/slide-1-layer-middle.png);"></div>
+				<div class="slider__layer" data-swiper-parallax="14%" style="background-image: url(img/slides/slide-1-layer-front.png);"></div>
+			</div>
+			<div class="swiper-slide slider__item">
+				<div class="slider__layer" data-swiper-parallax="35%" style="background-image: url(img/slides/slide-2-layer-back.jpg);"></div>
+				<div class="slider__layer" data-swiper-parallax="25%" style="background-image: url(img/slides/slide-2-layer-middle.png);"></div>
+				<div class="slider__layer" data-swiper-parallax="14%" style="background-image: url(img/slides/slide-2-layer-front.png);"></div>
+			</div>
+			<div class="swiper-slide slider__item">
+				<div class="slider__layer" data-swiper-parallax="35%" style="background-image: url(img/slides/slide-3-layer-back.jpg);"></div>
+				<div class="slider__layer" data-swiper-parallax="25%" style="background-image: url(img/slides/slide-3-layer-middle.png);"></div>
+				<div class="slider__layer" data-swiper-parallax="14%" style="background-image: url(img/slides/slide-3-layer-front.png);"></div>
+			</div>
+		</div>
+	</div>
+<div class="notification-icon">
+    <div class="icon">
+		<img src="notification.png" alt="Уведомления" class="notification-image">
+      <span class="notification-count">!</span>
+    </div>
+    <div class="notification-menu">
+      <ul>
+        <li><span class="list-number">1</span>Распродажа</li>
+        <li><span class="list-number">2</span>Промокод</li>
+        <li><span class="list-number">3</span>Скидки</li>
+      </ul>
+    </div>
+  </div>
+  <div class="social-links">
+	<a href="https://www.instagram.com" target="_blank" class="social-icon">
+	  <img src="instagram.png">
+	</a>
+	<a href="https://www.youtube.com" target="_blank" class="social-icon">
+	  <img src="youtube.png">
+	</a>
+	<a href="https://t.me" target="_blank" class="social-icon">
+	  <img src="telegram.png">
+	</a>
+	<a href="https://vk.com" target="_blank" class="social-icon">
+	  <img src="vk.png">
+	</a>
+  </div>
+  
 </body>
 </html>

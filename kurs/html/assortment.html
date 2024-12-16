@@ -1,19 +1,92 @@
-<!-- Главная страница ассортимента -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Ассортимент</title>
-	<link rel="stylesheet" href="styles.css">
-	<script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товаров</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .hidden {
+            display: none;
+        }
+        .cart-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 300px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        .cart-modal.active {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .cart-content {
+            text-align: center;
+        }
+        .cart-items {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+        .cart-items li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .cart-items button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cart-items button:hover {
+            background-color: #d32f2f;
+        }
+        #close-cart, #go-to-cart {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        #close-cart:hover, #go-to-cart:hover {
+            background-color: #0056b3;
+        }
+        .add-to-cart {
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .add-to-cart:active {
+            transform: scale(0.95);
+            background-color: #007BFF;
+        }
+    </style>
 </head>
 <body>
-	<header>
+    <header>
 		<div class="top-line">
             <div class="row">
                 <div class="col col--left">
                     <a href="#" class="logo">
+                        
                         
                     </a>
                 </div>
@@ -32,66 +105,128 @@
             </div>
         </div>
 	</header>
-	<main>
-		
-<section class="assortment-main">
-    <h1>Ассортимент</h1>
-    <div class="product-container">
-        <div class="product-card">
-            <div class="heart-icon"></div>
-            <img src="tovar1.png" alt="WaterFall">
-            <h3>WaterFall</h3>
-            <p class="price">95 450 ₽</p>
-            <div class="buttons">
-                <button class="add-to-cart">Купить</button>
+    <main>
+        <!-- Пример карточки товара -->
+        <div class="detail" data-product-id="1">
+            <div>
+                <img src="tovar1.png" alt="Изображение товара" class="product-image">
+            </div>
+            <div class="content">
+                <h2 class="title">Raven</h2>
+                <p class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus ratione consectetur architecto accusamus iste assumenda velit molestiae reiciendis facere.
+                </p>
+                <p><b>Размер</b></p>
+                <ul class="sizes">
+                    <li data-size="50">50</li>
+                    <li data-size="100">100</li>
+                    <li data-size="150">150</li>
+                </ul>
+                <div class="price">
+                    <span>Цена:</span> <span class="price-value">150</span>
+                </div>
+                <div class="buttons">
+                    <button class="add-to-cart">Добавить в корзину</button>
+                </div>
             </div>
         </div>
-        <div class="product-card">
-            <div class="heart-icon"></div>
-            <img src="tovar2.png" alt="Zecu">
-            <h3>Zecu</h3>
-            <p class="price">88 350 ₽</p>
-            <div class="buttons">
-                <button class="add-to-cart">Купить</button>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="heart-icon"></div>
-            <img src="tovar3.png" alt="Lost Cherry">
-            <h3>Lost Cherry</h3>
-            <p class="price">79 900 ₽</p>
-            <div class="buttons">
-                <button class="add-to-cart">Купить</button>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="heart-icon"></div>
-            <img src="tovar4.png" alt="Delight">
-            <h3>Delight</h3>
-            <p class="price">120 000 ₽</p>
-            <div class="buttons">
-                <button class="add-to-cart">Купить</button>
-            </div>
-        </div>
-    </div>
-</section>
-	</main>
-	<footer>
+    </main>
+    <footer>
 		<p>&copy; 2024. Все права защищены.</p>
 		<address>
 			Разработано: <a href="mailto:developer@example.com">developer@example.com</a>
 		</address>
 	</footer>
+    <div id="cart-modal" class="cart-modal hidden">
+        <div class="cart-content">
+            <h2>Корзина</h2>
+            <ul class="cart-items"></ul>
+            <button id="go-to-cart">Перейти в корзину</button>
+            <button id="close-cart">Закрыть</button>
+        </div>
+    </div>
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const productCards = document.querySelectorAll('.detail');
+            const cartModal = document.getElementById('cart-modal');
+            const cartItemsContainer = document.querySelector('.cart-items');
+            const closeCartButton = document.getElementById('close-cart');
+            const goToCartButton = document.getElementById('go-to-cart');
+            const priceModifiers = { '50': 0, '100': 50, '150': 100 };
+
+            closeCartButton.addEventListener('click', () => {
+                cartModal.classList.remove('active');
+                setTimeout(() => cartModal.classList.add('hidden'), 300);
+            });
+
+            goToCartButton.addEventListener('click', () => {
+                alert('Функционал перехода в корзину ещё не реализован.');
+            });
+
+            productCards.forEach(card => {
+                const sizes = card.querySelectorAll('.sizes li');
+                const addToCartButton = card.querySelector('.add-to-cart');
+                const priceDisplay = card.querySelector('.price-value');
+                const basePrice = 150; // Базовая цена
+                let selectedSize = null;
+
+                sizes.forEach(size => {
+                    size.addEventListener('click', () => {
+                        sizes.forEach(s => s.classList.remove('active'));
+                        size.classList.add('active');
+                        selectedSize = size.getAttribute('data-size');
+                        priceDisplay.textContent = basePrice + priceModifiers[selectedSize];
+                    });
+                });
+
+                addToCartButton.addEventListener('click', () => {
+                    const productId = card.getAttribute('data-product-id');
+                    const productTitle = card.querySelector('.title').textContent;
+
+                    if (!selectedSize) {
+                        alert('Пожалуйста, выберите размер перед добавлением в корзину.');
+                        return;
+                    }
+
+                    // Анимация кнопки
+                    addToCartButton.classList.add('active');
+                    setTimeout(() => addToCartButton.classList.remove('active'), 200);
+
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    cart.push({
+                        id: productId,
+                        title: productTitle,
+                        size: selectedSize,
+                        price: priceDisplay.textContent
+                    });
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    updateCartUI(cart);
+                    cartModal.classList.remove('hidden');
+                    setTimeout(() => cartModal.classList.add('active'), 10);
+                });
+            });
+
+            function updateCartUI(cart) {
+                cartItemsContainer.innerHTML = '';
+                cart.forEach((item, index) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `${item.title} (Размер: ${item.size}) - ${item.price} руб. <button data-index="${index}">Удалить</button>`;
+                    cartItemsContainer.appendChild(li);
+                });
+
+                const deleteButtons = cartItemsContainer.querySelectorAll('button');
+                deleteButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const index = button.getAttribute('data-index');
+                        cart.splice(index, 1);
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        updateCartUI(cart);
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-    
