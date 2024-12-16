@@ -35,6 +35,12 @@
         .cart-content {
             text-align: center;
         }
+        .cart-content h2 {
+            color: white; /* Изменение цвета текста "Корзина" на белый */
+            
+            padding: 1px;
+            border-radius: 8px;
+        }
         .cart-items {
             list-style: none;
             padding: 0;
@@ -47,6 +53,10 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 10px;
+            color: white; /* Изменение цвета текста на белый */
+            background-color: #4f9791; /* Фон для лучшей читаемости */
+            padding: 5px;
+            border-radius: 5px;
         }
         .cart-items button {
             background-color: #f44336;
@@ -78,6 +88,18 @@
             transform: scale(0.95);
             background-color: #007BFF;
         }
+        /* Медиазапрос для мобильных устройств */
+        @media (max-width: 768px) {
+            .product-container {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 45px;
+            }
+            .product-container > * {
+                flex: 1 1 auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -93,7 +115,7 @@
                         <ul>
                             <li><a href="index.html">Главная</a></li>
                             <li><a href="assortment.html">Ассортимент</a></li>
-                            <li><a href="about.html">О нас</a></li>
+                            <li><a href="about.html">Мы</a></li>
                             <li><a href="contacts.html">Контакты</a></li>
                             <li><a href="cart.html">Корзина</a></li>
                         </ul>
@@ -183,7 +205,7 @@
                     <img src="tovar4.png" alt="Изображение товара" class="product-image">
                 </div>
                 <div class="content">
-                    <h2 class="title">Eagle</h2>
+                    <h2 class="title">Love Delight</h2>
                     <p class="description">Описание товара 4</p>
                     <p><b>Объем</b></p>
                     <ul class="sizes">

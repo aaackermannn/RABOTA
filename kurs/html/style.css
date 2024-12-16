@@ -19,7 +19,7 @@ body {
 main {
     width: 90%;
     max-width: 1200px;
-    margin: 50px auto;
+    margin: 20px auto;
     padding: 20px;
     background-color: white;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -30,21 +30,15 @@ main {
 h2 {
     font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
 }
 
-/* Смещение навигационного меню вправо */
-.main-menu {
-    display: flex;
-    justify-content: flex-end; /* Смещение вправо */
-    gap: 20px;
-}
 
 /* Контейнер для карточек товаров */
 .product-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 карточки в ряд */
-    gap: 20px; /* Отступы между карточками */
+    gap: 40px; /* Отступы между карточками */
     justify-items: center;
     margin: 30px auto;
     max-width: 1200px;
@@ -62,7 +56,7 @@ h2 {
     padding: 15px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 1px;
     transition: transform 0.3s ease;
 }
 
@@ -78,7 +72,7 @@ h2 {
 .detail .content {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1px;
 }
 
 .detail h2 {
@@ -95,7 +89,7 @@ h2 {
 
 /* Стили для заголовка "Объем" */
 .detail .volume-title {
-    font-size: 1.1em;
+    font-size: 100.1em;
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
@@ -110,7 +104,7 @@ h2 {
 .detail .sizes-container {
     display: flex;
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 50px;
 }
 
 /* Кнопки выбора объема */
@@ -123,8 +117,8 @@ h2 {
 
 .detail .sizes li {
     background-color: #f4f4f4;
-    padding: 5px 15px;
-    border-radius: 5px;
+    padding: 1px 15px;
+    border-radius: 50px;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s, transform 0.2s;
@@ -137,7 +131,7 @@ h2 {
 
 .detail .price {
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: bold;
     color: #333;
 }
@@ -164,26 +158,35 @@ h2 {
 /* Шапка сайта */
 header {
     background-color: var(--primary-color);
-    padding: 15px 20px;
+    padding: 8px 20px;
 }
 
-header .main-menu {
+.main-menu ul {
     display: flex;
-    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
     gap: 20px;
 }
 
-header .main-menu li {
-    display: inline-block;
-}
-
-header .main-menu a {
-    color: white;
+.main-menu li a {
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
 }
+@media (max-width: 768px) {
+    .main-menu ul {
+        flex-direction: column; /* Вертикальное расположение */
+        gap: 10px; /* Уменьшенные отступы между кнопками */
+    }
 
+    .main-menu li a {
+        display: block; /* Кнопки растягиваются на всю ширину */
+        text-align: center; /* Текст выровнен по центру */
+        padding: 10px; /* Увеличенные отступы для удобства */
+        width: 100%; /* Растяжение на всю ширину контейнера */
+    }
+}
 header .main-menu a:hover {
     color: #c8e6c9;
 }
