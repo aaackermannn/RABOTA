@@ -106,27 +106,97 @@
         </div>
 	</header>
     <main>
-        <!-- Пример карточки товара -->
-        <div class="detail" data-product-id="1">
-            <div>
-                <img src="tovar1.png" alt="Изображение товара" class="product-image">
-            </div>
-            <div class="content">
-                <h2 class="title">Raven</h2>
-                <p class="description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus ratione consectetur architecto accusamus iste assumenda velit molestiae reiciendis facere.
-                </p>
-                <p><b>Размер</b></p>
-                <ul class="sizes">
-                    <li data-size="50">50</li>
-                    <li data-size="100">100</li>
-                    <li data-size="150">150</li>
-                </ul>
-                <div class="price">
-                    <span>Цена:</span> <span class="price-value">150</span>
+        <!-- Контейнер для карточек товаров -->
+        <div class="product-container">
+            <!-- Первая карточка товара -->
+            <div class="detail" data-product-id="1">
+                <div>
+                    <img src="tovar1.png" alt="Изображение товара" class="product-image">
                 </div>
-                <div class="buttons">
-                    <button class="add-to-cart">Добавить в корзину</button>
+                <div class="content">
+                    <h2 class="title">Raven</h2>
+                    <p class="description">Описание товара 1</p>
+                    <p><b>Объем</b></p>
+                    <ul class="sizes">
+                        <li data-size="50">50</li>
+                        <li data-size="100">100</li>
+                        <li data-size="150">150</li>
+                    </ul>
+                    <div class="price">
+                        <span>Цена:</span> <span class="price-value">150</span> руб.
+                    </div>
+                    <div class="buttons">
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Вторая карточка товара -->
+            <div class="detail" data-product-id="2">
+                <div>
+                    <img src="tovar2.png" alt="Изображение товара" class="product-image">
+                </div>
+                <div class="content">
+                    <h2 class="title">Falcon</h2>
+                    <p class="description">Описание товара 2</p>
+                    <p><b>Объем</b></p>
+                    <ul class="sizes">
+                        <li data-size="50">50</li>
+                        <li data-size="100">100</li>
+                        <li data-size="150">150</li>
+                    </ul>
+                    <div class="price">
+                        <span>Цена:</span> <span class="price-value">180</span> руб.
+                    </div>
+                    <div class="buttons">
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Третья карточка товара -->
+            <div class="detail" data-product-id="3">
+                <div>
+                    <img src="tovar3.png" alt="Изображение товара" class="product-image">
+                </div>
+                <div class="content">
+                    <h2 class="title">Hawk</h2>
+                    <p class="description">Описание товара 3</p>
+                    <p><b>Объем</b></p>
+                    <ul class="sizes">
+                        <li data-size="50">50</li>
+                        <li data-size="100">100</li>
+                        <li data-size="150">150</li>
+                    </ul>
+                    <div class="price">
+                        <span>Цена:</span> <span class="price-value">200</span> руб.
+                    </div>
+                    <div class="buttons">
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Четвертая карточка товара -->
+            <div class="detail" data-product-id="4">
+                <div>
+                    <img src="tovar4.png" alt="Изображение товара" class="product-image">
+                </div>
+                <div class="content">
+                    <h2 class="title">Eagle</h2>
+                    <p class="description">Описание товара 4</p>
+                    <p><b>Объем</b></p>
+                    <ul class="sizes">
+                        <li data-size="50">50</li>
+                        <li data-size="100">100</li>
+                        <li data-size="150">150</li>
+                    </ul>
+                    <div class="price">
+                        <span>Цена:</span> <span class="price-value">220</span> руб.
+                    </div>
+                    <div class="buttons">
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -212,7 +282,7 @@
                 cartItemsContainer.innerHTML = '';
                 cart.forEach((item, index) => {
                     const li = document.createElement('li');
-                    li.innerHTML = `${item.title} (Размер: ${item.size}) - ${item.price} руб. <button data-index="${index}">Удалить</button>`;
+                    li.innerHTML = `${item.title} (Объем: ${item.size}) - ${item.price} руб. <button data-index="${index}">Удалить</button>`;
                     cartItemsContainer.appendChild(li);
                 });
 

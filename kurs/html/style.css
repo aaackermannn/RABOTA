@@ -1,250 +1,202 @@
-@import url('https://fonts.cdnfonts.com/css/lt-galaxy-reverse');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-.main-menu li {
-	list-style-type: none;
-	display: inline-block;
+/* Общие стили */
+:root {
+    --primary-color: #4f9791;
+    --text-color: #333;
+    --background-color: #f9f9f9;
+    --hover-color: #4f9791;
+    --font-family: 'Poppins', sans-serif;
 }
 
-.main-menu li > * {
-	color: var(--gray-color);
-	text-transform: uppercase;
-	font-weight: 700;
-	text-decoration: none;
-	font-size: .725em;
-	letter-spacing: .25em;
-	position: relative;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-.main-menu li > *::before,
-.main-menu li > *::after {
-	content: '';
-	display: inline-block;
-	height: 2px;
-	background-color: var(--green-color);
-	width: 11.25px;
-	vertical-align: middle;
-	top: -1px;
-	left: -1.5px;
-	position: relative;
-	border-radius: 10em;
-	margin: 0 7.25px;
-	visibility: hidden;
+/* Контейнер страницы */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
-.main-menu li.active > *,
-.main-menu li:hover > * {
-	color: var(--white-color);
+/* Заголовки */
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
-.main-menu li.active > *::before,
-.main-menu li:hover > *::before,
-.main-menu li.active > *::after,
-.main-menu li:hover > *::after {
-	visibility: visible;
-}
+/* Смещение навигационного меню вправо */
 .main-menu {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 20px;
-    opacity: 1; /* Устанавливаем 1, чтобы меню было видно */
-    transform: translateY(0); /* Убираем смещение вверх */
-    pointer-events: auto; /* Включаем возможность кликов */
-    position: relative;
-}
-.button {
-	padding: 1.05em 2.6em;
-	color: var(--white-color);
-	background-color: var(--green-color);
-	border: 1.5px solid transparent;
-	border-radius: 10em 0 10em 10em;
-	font-weight: 600;
-	text-decoration: none;
-	letter-spacing: .21em;
-	text-transform: uppercase;
-	font-size: .65em;
-	cursor: pointer;
-}
-
-.button--top {
-	background-color: transparent;
-	border-color: var(--green-color);
-	margin: 0 2em 0 3em;
-}
-
-.button--main {
-	margin-top: 3em;
-	padding: 1.6em 3.5em;
-}
-
-.button:hover {
-	background-color: var(--green-color);
-}
-
-.submenu {
-	--anim-menu-btn-color: var(--gray-color);
-	--anim-menu-btn-gap: .195em;
-	--anim-menu-btn-width: 1.08em;
-}
-@font-face {
-	font-family: montserrat-g;
-	src: url(Montserrat-Regular.woff2);
-}
-
-@font-face {
-	font-family: montserrat-g;
-	src: url(Montserrat-Bold.woff2);
-	font-weight: 700;
-}
-
-@font-face {
-	font-family: montserrat-g;
-	src: url(Montserrat-Black.woff2);
-	font-weight: 900;
-}
-
-@font-face {
-	font-family: montserrat-g;
-	src: url(Montserrat-SemiBold.woff2);
-	font-weight: 600;
-}
-:root {
-	--grid-width: 11400px;
-	--grid-gutter: .5em;
-}
-
-.container {
-	max-width: calc(var(--grid-width) + var(--grid-gutter) * 2);
-	min-width: calc(320px + var(--grid-gutter) * 2);
-	padding: 0 var(--grid-gutter);
-	margin: auto;
-}
-
-.row {
-	display: flex;
-	margin: 0 calc(var(--grid-gutter) * -1);
-}
-
-.col {
-	width: fit-content;
-	padding: 0 var(--grid-gutter);
-}
-
-.col--lead {
-	flex: 1;
-}
-
-.col--center {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.col--right {
-	display: flex;
-	justify-content: right;
-}
-body{
-    background-color: #000000;
-    margin: 0;
-    font-family: sans-serif;
-}
-
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    list-style: none;
-}
-main{
-    background-color: #7c9a99;
-    width: min(1200px, 90vw);
-    margin: auto;
-    margin-top: 50px;
-    box-shadow: 0 30px 30px #cfcfcf;
-}
-.description img{
-    width: 100%;
-}
-.detail{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 50px;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-}
-.detail img{
-    width: 100%;
-}
-.detail h2{
-    font-size: 2em;
-    font-weight: 500;
-    font-family: sans-serif;
-}
-.detail ul{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 50px);
-    grid-template-rows: repeat(auto-fill, 50px);
+    justify-content: flex-end; /* Смещение вправо */
     gap: 20px;
 }
-.detail ul li{
-    background-color: #ebe8e8;
-    font-size: large;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+
+/* Контейнер для карточек товаров */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 карточки в ряд */
+    gap: 20px; /* Отступы между карточками */
+    justify-items: center;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+/* Стиль карточек товаров */
+.detail {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
     border-radius: 10px;
-    transition: box-shadow 0.5s;
-}
-.detail .price img{
-    width: 33px;
-}
-.detail .price{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 3em;
-    font-weight: 500;
-    font-family: 'LT Galaxy Reverse', sans-serif;
-}
-.buttons{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 170px);
-    gap: 20px;
-}
-.buttons button{
-    all: unset;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    background-color: #0e0c0d;
-    color: #ffffff;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: small;
-    padding: 10px 0;
-    border-radius: 5px;
-
-}
-.detail .content{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 100%; /* Автоматическая ширина по сетке */
+    max-width: 250px; /* Сужение карточки */
+    padding: 15px;
     display: flex;
     flex-direction: column;
+    gap: 15px;
+    transition: transform 0.3s ease;
+}
+
+.detail:hover {
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+.detail img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.detail .content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.detail .description {
+    font-size: 0.9em;
+    color: #555;
+    text-align: center;
+}
+
+/* Стили для заголовка "Объем" */
+.detail .volume-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #f4f4f4;
+    padding: 5px 10px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Контейнер для кнопок выбора объема */
+.detail .sizes-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+/* Кнопки выбора объема */
+.detail .sizes {
+    display: flex;
+    gap: 10px;
+    padding: 0; /* Убирает отступы по умолчанию */
+    list-style: none; /* Убирает точки */
+}
+
+.detail .sizes li {
+    background-color: #f4f4f4;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.detail .sizes li:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}
+
+.detail .price {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.detail .buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.detail .buttons button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.detail .buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* Шапка сайта */
+header {
+    background-color: var(--primary-color);
+    padding: 15px 20px;
+}
+
+header .main-menu {
+    display: flex;
+    justify-content: center;
     gap: 20px;
 }
-.detail .content .des{
-    font-size: small;
-    font-family: Poppins;
+
+header .main-menu li {
+    display: inline-block;
 }
-.detail b{
-    font-family: Poppins;
-    font-weight: 500;
+
+header .main-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
 }
-.detail li.active{
-    border: 4px solid #050505;
-    box-shadow: 0 10px 50px #01fde4;
+
+header .main-menu a:hover {
+    color: #c8e6c9;
 }
+
+/* Футер */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.9rem;
+    border-radius: 0 0 10px 10px;
+}
+
 
