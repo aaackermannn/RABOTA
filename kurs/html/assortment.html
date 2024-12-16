@@ -59,7 +59,7 @@
         .cart-items button:hover {
             background-color: #d32f2f;
         }
-        #close-cart, #go-to-cart {
+        #close-cart, #order-button {
             background-color: #007BFF;
             color: white;
             border: none;
@@ -68,7 +68,7 @@
             cursor: pointer;
             margin: 5px;
         }
-        #close-cart:hover, #go-to-cart:hover {
+        #close-cart:hover, #order-button:hover {
             background-color: #0056b3;
         }
         .add-to-cart {
@@ -86,8 +86,6 @@
             <div class="row">
                 <div class="col col--left">
                     <a href="#" class="logo">
-                        
-                        
                     </a>
                 </div>
                 <div class="col col--center col--right col--lead">
@@ -101,7 +99,6 @@
                         </ul>
                     </nav>
                 </div>
-                
             </div>
         </div>
 	</header>
@@ -121,6 +118,7 @@
                         <li data-size="50">50</li>
                         <li data-size="100">100</li>
                         <li data-size="150">150</li>
+                        <li data-size="200">200</li>
                     </ul>
                     <div class="price">
                         <span>Цена:</span> <span class="price-value">150</span> руб.
@@ -144,6 +142,7 @@
                         <li data-size="50">50</li>
                         <li data-size="100">100</li>
                         <li data-size="150">150</li>
+                        <li data-size="200">200</li>
                     </ul>
                     <div class="price">
                         <span>Цена:</span> <span class="price-value">180</span> руб.
@@ -167,6 +166,7 @@
                         <li data-size="50">50</li>
                         <li data-size="100">100</li>
                         <li data-size="150">150</li>
+                        <li data-size="200">200</li>
                     </ul>
                     <div class="price">
                         <span>Цена:</span> <span class="price-value">200</span> руб.
@@ -190,6 +190,7 @@
                         <li data-size="50">50</li>
                         <li data-size="100">100</li>
                         <li data-size="150">150</li>
+                        <li data-size="200">200</li>
                     </ul>
                     <div class="price">
                         <span>Цена:</span> <span class="price-value">220</span> руб.
@@ -211,7 +212,7 @@
         <div class="cart-content">
             <h2>Корзина</h2>
             <ul class="cart-items"></ul>
-            <button id="go-to-cart">Перейти в корзину</button>
+            <button id="order-button">Оформить заказ</button>
             <button id="close-cart">Закрыть</button>
         </div>
     </div>
@@ -223,16 +224,29 @@
             const cartModal = document.getElementById('cart-modal');
             const cartItemsContainer = document.querySelector('.cart-items');
             const closeCartButton = document.getElementById('close-cart');
-            const goToCartButton = document.getElementById('go-to-cart');
-            const priceModifiers = { '50': 0, '100': 50, '150': 100 };
+            const orderButton = document.getElementById('order-button');
+            const priceModifiers = { '50': 0, '100': 50, '150': 100, '200': 500  };
 
             closeCartButton.addEventListener('click', () => {
                 cartModal.classList.remove('active');
                 setTimeout(() => cartModal.classList.add('hidden'), 300);
             });
 
-            goToCartButton.addEventListener('click', () => {
-                alert('Функционал перехода в корзину ещё не реализован.');
+            orderButton.addEventListener('click', () => {
+                Toastify({
+                    text: "Заказ успешно оформлен!",
+                    duration: 3000,
+                    backgroundColor: "green",
+                    close: true,
+                }).showToast();
+                setTimeout(() => {
+                    Toastify({
+                        text: "Перейти в профиль",
+                        duration: 3000,
+                        backgroundColor: "blue",
+                        close: true,
+                    }).showToast();
+                }, 3000);
             });
 
             productCards.forEach(card => {
@@ -300,3 +314,4 @@
     </script>
 </body>
 </html>
+
